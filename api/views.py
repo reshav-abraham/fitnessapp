@@ -7,6 +7,8 @@ from api.models import User
 def index(request):
     return HttpResponse("something")
 
-def log(request):
+def logs(request):
     user = User.objects.filter()[0]
-    return HttpResponse(str(user.__dict__),) 
+    logs = user.log_set.all()
+    print(logs[0].__dict__)
+    return HttpResponse(str([log.description for log in logs])) 

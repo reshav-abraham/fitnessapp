@@ -20,5 +20,5 @@ import api.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', api.views.index, name='index'),
-    path('log', api.views.log, name='log')
+    path('logs', api.views.logs, name='logs')
 ]
