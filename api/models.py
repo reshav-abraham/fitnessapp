@@ -13,5 +13,6 @@ class User(models.Model):
 
 
 class Log(models.Model):
-    description = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    description = models.CharField(max_length=100)
     calories = models.CharField(max_length=100)

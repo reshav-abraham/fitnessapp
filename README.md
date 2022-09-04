@@ -7,6 +7,7 @@
 
 - python manage.py makemigrations
 - python manage.py migrate
+- python manage.py migrate --run-syncdb
 
 - ./manage.py shell
 >> `user = User.objects.create(id=1, user_name="reshavabraham", first_name="Reshav", last_name="Abraham", email="reshavabraham@gmail.com")`

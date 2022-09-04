@@ -8,4 +8,5 @@ def index(request):
     return HttpResponse("something")
 
 def log(request):
-    return HttpResponse("logs!") 
+    user = User.objects.filter()[0]
+    return HttpResponse(str(user.__dict__),) 
