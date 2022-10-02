@@ -7,8 +7,15 @@ from api.models import User
 def index(request):
     return HttpResponse("something")
 
+
+def sign_up(request):
+    # request get 'submission form'
+    # request post 'submit form'
+    return render(request, '../templates/registration/sign_up.html')
+
 def logs(request):
-    user = User.objects.filter()[0]
+    print(request.user)
+    user = User.objects.filter(user_name=request.user)[0]
     logs = user.log_set.all()
-    print(logs[0].__dict__)
-    return HttpResponse(str([log.description for log in logs])) 
+    logs_html = "".join(["<li>"+log.description + "</li>" for log in logs])
+    return HttpResponse(f"<div>{logs_html}<br /><a href='/'>back to home</a></div>") 
